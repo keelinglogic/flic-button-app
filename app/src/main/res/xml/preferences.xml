@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <PreferenceCategory
+        app:title="Service">
+
+        <SwitchPreferenceCompat
+            app:key="pref_service_enabled"
+            app:title="Start on Boot"
+            app:summary="Automatically start service when device boots"
+            app:defaultValue="true" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        app:title="Intent Configuration">
+
+        <EditTextPreference
+            app:key="pref_down_intent"
+            app:title="Button Down Intent"
+            app:defaultValue="com.zello.ptt.down"
+            app:useSimpleSummaryProvider="true" />
+
+        <EditTextPreference
+            app:key="pref_up_intent"
+            app:title="Button Up Intent"
+            app:defaultValue="com.zello.ptt.up"
+            app:useSimpleSummaryProvider="true" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        app:title="Presets">
+
+        <Preference
+            app:key="preset_zello"
+            app:title="Zello"
+            app:summary="com.zello.ptt.down / com.zello.ptt.up" />
+
+        <Preference
+            app:key="preset_eschat"
+            app:title="ESChat"
+            app:summary="com.speakez.pttbutton.pressed / released" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        app:title="About">
+
+        <Preference
+            app:key="pref_version"
+            app:title="Version"
+            app:summary="1.0.0"
+            app:selectable="false" />
+
+        <Preference
+            app:key="pref_github"
+            app:title="Source Code"
+            app:summary="View on GitHub" />
+
+    </PreferenceCategory>
+
+</PreferenceScreen>
