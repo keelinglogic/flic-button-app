@@ -150,8 +150,8 @@ class FlicBridgeService : Service() {
                 Log.e(TAG, "Button failure: $bdAddr, error: $errorCode, subCode: $subCode")
             }
 
-            override fun onBatteryLevelUpdated(button: Flic2Button, level: Int) {
-                Log.d(TAG, "Button $bdAddr battery: $level%")
+            override fun onBatteryLevelUpdated(button: Flic2Button, level: io.flic.flic2libandroid.BatteryLevel) {
+                Log.d(TAG, "Button $bdAddr battery: ${level.estimatedPercentage}%")
             }
         }
     }

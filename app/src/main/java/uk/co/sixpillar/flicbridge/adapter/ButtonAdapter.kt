@@ -36,11 +36,12 @@ class ButtonAdapter(
             val connectionState = when (button.connectionState) {
                 Flic2Button.CONNECTION_STATE_DISCONNECTED -> "Disconnected"
                 Flic2Button.CONNECTION_STATE_CONNECTING -> "Connecting..."
-                Flic2Button.CONNECTION_STATE_CONNECTED -> "Connected"
+                Flic2Button.CONNECTION_STATE_CONNECTED_STARTING -> "Starting..."
+                Flic2Button.CONNECTION_STATE_CONNECTED_READY -> "Connected"
                 else -> "Unknown"
             }
 
-            val battery = button.lastKnownBatteryLevel
+            val battery = button.lastKnownBatteryLevel?.estimatedPercentage ?: "?"
             binding.txtButtonStatus.text = "$connectionState | Battery: $battery%"
 
             binding.root.setOnClickListener {

@@ -51,6 +51,6 @@ dependencies {
     implementation("androidx.lifecycle:lifecycle-service:2.7.0")
     implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.7.0")
 
-    // Flic 2 SDK
-    implementation("io.flic:flic2lib-android:1.3.2")
+    // Flic 2 SDK (via JitPack)
+    implementation("com.github.50ButtonsEach:flic2lib-android:2.0.1")
 }

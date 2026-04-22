@@ -197,8 +197,17 @@ class MainActivity : AppCompatActivity() {
                             Toast.LENGTH_SHORT
                         ).show()
                     }
-                    // Stop scan and connect
-                    Flic2Manager.getInstance().stopScan()
+                }
+
+                override fun onConnected() {
+                    Log.i(TAG, "Button connected during scan")
+                    runOnUiThread {
+                        Toast.makeText(
+                            this@MainActivity,
+                            "Button connected - verifying...",
+                            Toast.LENGTH_SHORT
+                        ).show()
+                    }
                 }
 
                 override fun onComplete(
@@ -223,10 +232,8 @@ class MainActivity : AppCompatActivity() {
                                     refreshButtonList()
                                 }
                             }
-                            Flic2ScanCallback.RESULT_CANCELED -> {
-                                Log.i(TAG, "Scan canceled")
-                            }
                             else -> {
+                                // Scan stopped or failed
                                 Log.e(TAG, "Scan failed: result=$result, subCode=$subCode")
                                 Toast.makeText(
                                     this@MainActivity,
